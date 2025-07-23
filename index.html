@@ -2,117 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sreesanth S | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSK Universe | Official Fan Hub</title>
+
+  <!-- Stylesheets & Fonts -->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- Chart.js & AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="csk.png" alt="CSK Logo" class="logo-img">
 
-  <!-- Header -->
-  <header class="hero" id="home">
-    <nav class="navbar">
-      <div class="logo">Sreesanth S</div>
+      <h1>CSK Universe</h1>
+    </div>
+    <nav>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#resume">Resume</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#squad">Squad</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#fan-zone">Fan Zone</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero-content">
-      <h1>Hi, I'm Sreesanth S</h1>
-      <p>Web Developer | Creative Thinker | Problem Solver | Innovative Writer</p>
-      <a href="#contact" class="btn">Let's Connect</a>
-    </div>
   </header>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="profile.jpeg" alt="Sreesanth S" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;" />
-
-
-
-
-      <p>Web Developer by Day, Author by Night!
-
-Passionate about blending technology and creativity, I specialize in web development while also pursuing my love for storytelling. With a published mystery fiction novel on Amazon, I bring a unique perspective that merges technical expertise with creative problem-solving.
-
-Currently deepening my skills in backend development to build more robust and scalable applications. Always eager to learn, innovate, and connect with like-minded professionals. Let’s connect and create something amazing!</p>
+  <section id="home" class="hero" data-aos="fade-in">
+    <video autoplay muted loop id="heroVideo">
+      <source src="images/csk-intro.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h2>Roar with the Lions!</h2>
+      <p>Official Fan Portal of Chennai Super Kings</p>
+      <div id="timer" class="timer">Loading countdown...</div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-card">
-        <img src="assets/project1.png" alt="Project 1" />
-        <h3>EV Monitoring System<h3>
-        <p>An Electric Vehicle Monitoring system built using HTML, CSS, and JavaScript, focusing on monitoring key battery parameters like temperature, charge level, and efficiency. The system also gives a quick health status update to help users understand their battery’s condition.</p>
-      </div>
-      <div class="project-card">
-        <img src="assets/project2.png" alt="Project 2" />
-        <h3>E-book Reading Website</h3>
-        <p> I developed an E-Book Reading Website where users can read, upload, and search for books—free of cost after registration. Using  
-          1.HTML
-          2.CSS
-          3.js
-          4.PHP
-          5.MYSQL
-          6.XAMPP
-        </p>
+  <section id="squad" class="section">
+    <h2 data-aos="fade-up">Full 2025 Squad</h2>
+    <div class="filters" data-aos="fade-up">
+      <button onclick="filterPlayers('All')" class="active">All</button>
+      <button onclick="filterPlayers('Batter')">Batsmen</button>
+      <button onclick="filterPlayers('Bowler')">Bowlers</button>
+      <button onclick="filterPlayers('All-Rounder')">All-Rounders</button>
+      <button onclick="filterPlayers('Wicketkeeper')">Wicketkeepers</button>
+    </div>
+    <div id="playerGrid" class="player-grid" data-aos="fade-up"></div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="dhoni.jpg"><h3>MS Dhoni</h3></div>
+        <div class="swiper-slide"><img src="jadeja.jpeg"><h3>Jadeja</h3></div>
+        <div class="swiper-slide"><img src="gaikwad.jpeg"><h3>Ruturaj</h3></div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>XAMPP</span>
-      <span>FIGMA</span>
-      <span>C++</span>
-      <span>VS CODE</span>
+  <section id="schedule" class="section" data-aos="fade-right">
+    <h2>Upcoming Matches</h2>
+    <ul class="schedule-list">
+      <li><span class="badge upcoming">Mar 23</span> – CSK vs MI – 7:30 PM</li>
+      <li><span class="badge live">Mar 27</span> – CSK vs DC – 7:30 PM</li>
+      <li><span class="badge completed">Apr 01</span> – CSK vs RCB – 7:30 PM</li>
+    </ul>
+  </section>
+
+  <section id="stats" class="section" data-aos="zoom-in">
+    <h2>CSK Stats</h2>
+    <canvas id="cskChart"></canvas>
+  </section>
+
+  <section id="fan-zone" class="section" data-aos="fade-up">
+    <h2>Fan Zone</h2>
+    <div class="fan-content">
+      <div class="poll-box">
+        <form id="poll-form">
+          <p>Vote for your MVP:</p>
+          <label><input type="radio" name="vote" value="MS Dhoni" /> MS Dhoni</label><br>
+          <label><input type="radio" name="vote" value="Devon Conway" /> Devon Conway</label><br>
+          <label><input type="radio" name="vote" value="Ravindra Jadeja" /> Ravindra Jadeja</label><br>
+          <button type="button" onclick="submitVote()">Submit</button>
+          <p id="vote-result"></p>
+          <canvas id="pollChart"></canvas>
+        </form>
+      </div>
+      <div class="social-box">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/5k6UftT5ToM" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
-  <!-- Resume -->
-  <section id="resume" class="section">
-    <h2>Resume</h2>
-    <p><a class="btn" href="resume.pdf" download>Download My Resume</a></p>
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
 
-  <!-- Contact -->
-<!-- Contact -->
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <form id="contact-form">
-    <input type="text" placeholder="Name" required />
-    <input type="email" placeholder="Email" required />
-    <textarea placeholder="Your Message..." required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-
-  <div class="social-links">
-    <h3>Find me online:</h3>
-    <a href="https://github.com/Sreesanth2006-png" target="_blank">🌐 GitHub</a> |
-    <a href="https://www.linkedin.com/in/sreesanth-ssk/" target="_blank">💼 LinkedIn</a>
-  </div>
-</section>
-
-
-  <!-- Footer -->
   <footer>
-    <p>© 2025 Sreesanth S. Made with 💻 and ☕</p>
+    <p>&copy; 2025 CSK Universe — Built with 💛 for the Whistle Podu Army</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
