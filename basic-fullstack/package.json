@@ -1,0 +1,17 @@
+{
+  "name": "basic-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Minimal Node.js + vanilla JS full-stack todo app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT"
+}
+{}
